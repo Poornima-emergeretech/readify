@@ -4,6 +4,7 @@ import pg from "pg";
 import session from "express-session";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -29,7 +30,7 @@ function isLoggedIn(req, res, next) {
 
 // database connection
 
-dotenv.config();
+
 
 const db = new pg.Client({
   user: process.env.DB_USER,

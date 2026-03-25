@@ -1,7 +1,7 @@
 {
   "name": "book-notes-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "��#\u0000 \u0000r\u0000e\u0000a\u0000d\u0000i\u0000f\u0000y\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,5 +10,21 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.2",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "pg": "^8.20.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poornima-emergeretech/readify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Poornima-emergeretech/readify/issues"
+  },
+  "homepage": "https://github.com/Poornima-emergeretech/readify#readme"
 }
