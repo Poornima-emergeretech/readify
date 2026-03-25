@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <!-- LEFT SIDE -->
+      <div class="auth-info">
+        <h1>📚 Book Notes App</h1>
+        <p>
+          Organize your reading journey, track your favorite books, and keep
+          personal notes — all in one place.
+        </p>
+
+        <ul>
+          <li>⭐ Rate your books</li>
+          <li>📝 Add notes</li>
+          <li>📖 Book covers</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT SIDE (LOGIN BOX) -->
+      <div class="auth-card">
+        <h1>🔐 Login</h1>
+
+        <form
+          action="/login"
+          method="POST"
+          class="auth-form"
+          autocomplete="off"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            autocomplete="off"
+            required
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="off"
+            required
+          />
+
+          <button type="submit" class="auth-btn">Login</button>
+        </form>
+
+        <p>
+          Don't have an account?
+          <a href="/register">Register</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

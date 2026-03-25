@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="edit-container">
+      <h1>✏️ Edit Book</h1>
+
+      <form action="/edit/<%= book.id %>" method="POST" class="edit-form">
+        <label>Book Title</label>
+        <input type="text" name="title" value="<%= book.title %>" required />
+
+        <label>Author</label>
+        <input type="text" name="author" value="<%= book.author %>" required />
+
+        <label>Rating</label>
+        <input type="number" name="rating" value="<%= book.rating %>" />
+
+        <label>Notes</label>
+        <textarea name="notes"><%= book.notes %></textarea>
+
+        <div class="edit-buttons">
+          <button type="submit" class="save">Update</button>
+          <a href="/" class="cancel">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

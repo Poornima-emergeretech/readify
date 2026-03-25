@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Notes App</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <h1>📚 Book Notes App</h1>
+
+  <!-- ADD BOOK FORM -->
+  <form action="/add" method="POST">
+    <input type="text" name="title" placeholder="Book Title" required>
+    <input type="text" name="author" placeholder="Author" required>
+    <input type="number" name="rating" placeholder="Rating">
+    <input type="text" name="notes" placeholder="Notes">
+    <button type="submit">Add Book</button>
+  </form>
+
+  <hr>
+
+  <!-- EMPTY STATE -->
+  <% if (books.length === 0) { %>
+
+    <div class="empty-state">
+      <h2>📚 No books yet</h2>
+      <p>Start by adding your first book above 👆</p>
+    </div>
+
+  <% } else { %>
+
+    <!-- DISPLAY BOOKS -->
+    <% books.forEach(book => { %>
+
+      <div class="card">
+
+        <!-- IMAGE -->
+        <div class="img-box">
+          <img 
+            src="https://covers.openlibrary.org/b/title/<%= book.title %>-M.jpg"
+            onerror="this.src='https://via.placeholder.com/120'"
+          />
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+
+          <h2><%= book.title %></h2>
+          <h4><%= book.author %></h4>
+          <p class="rating">⭐ <%= book.rating %></p>
+
+          <!-- BUTTONS -->
+          <div class="buttons">
+
+            <form action="/delete" method="POST">
+              <input type="hidden" name="id" value="<%= book.id %>">
+              <button class="icon-btn delete" title="Delete">
+                <i data-lucide="trash-2"></i>
+              </button>
+            </form>
+
+            <form action="/edit/<%= book.id %>" method="GET">
+              <button class="icon-btn edit" title="Edit">
+                <i data-lucide="pencil"></i>
+              </button>
+            </form>
+
+          </div>
+
+          <!-- NOTES -->
+          <div class="notes">
+            <p><%= book.notes %></p>
+          </div>
+
+        </div>
+
+      </div>
+
+    <% }) %>
+
+  <% } %>
+
+  <!-- ICON INIT (ONLY ONCE) -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

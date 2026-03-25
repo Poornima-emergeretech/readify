@@ -1,0 +1,333 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== THEME COLORS ===== */
+:root {
+  --brown: #6f4e37;
+  --light-brown: #a67c52;
+  --beige: #f5f0e6;
+  --cream: #faf7f2;
+  --black: #2c2c2c;
+  --white: #ffffff;
+  --border: #ddd;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--beige);
+  color: var(--black);
+  padding: 20px;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--brown);
+}
+
+/* ===== FORM ===== */
+form {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--cream);
+}
+
+button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  background: var(--brown);
+  color: var(--white);
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ===== CARD ===== */
+.card {
+  display: flex;
+  gap: 20px;
+  background: var(--white);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 700px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== IMAGE ===== */
+.img-box img {
+  width: 120px;
+  border-radius: 8px;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.content h4 {
+  color: #777;
+  font-weight: normal;
+}
+
+.rating {
+  color: var(--light-brown);
+  font-weight: bold;
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+}
+
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.delete {
+  background: #c0392b;
+  color: white;
+}
+
+.edit {
+  background: var(--light-brown);
+  color: white;
+}
+
+/* ===== NOTES ===== */
+.notes {
+  margin-top: 10px;
+  padding: 15px;
+  background: var(--cream);
+  border-radius: 10px;
+  min-height: 100px;
+  line-height: 1.5;
+  border-left: 4px solid var(--brown);
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+  background: var(--white);
+  border-radius: 12px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.empty-state p {
+  color: #666;
+}
+
+/* ===== EDIT PAGE ===== */
+.edit-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-form input,
+.edit-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.save {
+  background: var(--brown);
+  color: white;
+}
+
+.cancel {
+  text-decoration: none;
+  padding: 8px 12px;
+  background: #888;
+  color: white;
+  border-radius: 6px;
+}
+
+/* ===== AUTH (LOGIN / REGISTER) ===== */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.auth-info {
+  max-width: 350px;
+}
+
+.auth-info p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.auth-info ul {
+  list-style: none;
+}
+
+.auth-info li {
+  margin-bottom: 8px;
+}
+
+.auth-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.auth-form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--cream);
+}
+
+.auth-btn {
+  background: var(--brown);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.auth-card a {
+  color: var(--brown);
+  text-decoration: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .auth-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+} 
+
+
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  button {
+    width: 90%;
+  }
+
+  .card {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .img-box img {
+    width: 100px;
+  }
+
+  .notes {
+    font-size: 14px;
+  }
+
+  .auth-card {
+    width: 90%;
+  }
+
+}
