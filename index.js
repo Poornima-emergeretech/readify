@@ -1,13 +1,14 @@
+import dotenv from "dotenv";
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import session from "express-session";
 import bcrypt from "bcrypt";
-import dotenv from "dotenv";
+
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // middleware
 app.use(bodyParser.urlencoded({ extended: true }));
