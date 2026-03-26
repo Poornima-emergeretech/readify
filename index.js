@@ -150,7 +150,7 @@ app.post("/login", async (req, res) => {
 
 
 
-
+console.log("PASSWORD:", process.env.DB_PASSWORD);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
