@@ -148,9 +148,16 @@ app.post("/login", async (req, res) => {
   }
 });
 
+app.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.send("Error logging out");
+    }
+    res.redirect("/login");
+  });
+});
 
-console.log(process.env.DATABASE_URL);
-console.log("PASSWORD:", process.env.DB_PASSWORD);
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
