@@ -34,11 +34,10 @@ function isLoggedIn(req, res, next) {
 
 
 const db = new pg.Client({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 db.connect();
@@ -76,16 +75,17 @@ app.post("/add", isLoggedIn, async (req, res) => {
 });
 
 app.post("/delete", isLoggedIn, async (req, res) => {
-      const userId = req.session.user.id;
+  const id = req.body.id;   
+  const userId = req.session.user.id;
 
-await db.query(
-  "DELETE FROM books WHERE id = $1 AND user_id = $2",
-  [id, userId]
-);
+  await db.query(
+    "DELETE FROM books WHERE id = $1 AND user_id = $2",
+    [id, userId]
+  );
 
   res.redirect("/");
 });
-
+  
 app.get("/edit/:id", isLoggedIn, async (req, res) => {
   const id = req.params.id;
 
@@ -149,7 +149,7 @@ app.post("/login", async (req, res) => {
 });
 
 
-
+console.log(process.env.DATABASE_URL);
 console.log("PASSWORD:", process.env.DB_PASSWORD);
 
 app.listen(port, () => {
